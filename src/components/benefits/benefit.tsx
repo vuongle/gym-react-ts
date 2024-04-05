@@ -15,6 +15,7 @@ type Props = {
 }
 
 export default function Benefit({ key, benefit, setSelectedPage }: Props) {
+  console.log(key)
   return (
     <motion.div
       variants={childVariantMotion}
