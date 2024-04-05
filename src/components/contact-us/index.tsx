@@ -17,7 +17,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
     trigger,
     formState: { errors }
   } = useForm()
-  const inputStyle = 'mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white'
+  const inputStyle = 'w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white'
 
   const onSubmit = async (e: any) => {
     const isValid = await trigger()
@@ -69,43 +69,46 @@ export default function ContactUs({ setSelectedPage }: Props) {
               method='POST'
               action='https://formsubmit.co/51a5b0a6907591ae22b02ca9e54b85ad'
             >
-              <input
-                className={inputStyle}
-                type='text'
-                placeholder='NAME'
-                {...register('name', {
-                  required: true,
-                  maxLength: 100
-                })}
-              />
-              {
-                // display errors of the name field
-                errors.name && (
-                  <p className='mt-1 text-primary-500'>
-                    {errors.name.type === 'required' && 'NAME is required'}
-                    {errors.name.type === 'maxLength' && 'NAME is not exceeded 100 characters'}
-                  </p>
-                )
-              }
-
-              <input
-                className={inputStyle}
-                type='email'
-                placeholder='EMAIL'
-                {...register('email', {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
-                })}
-              />
-              {
-                // display errors of the name field
-                errors.email && (
-                  <p className='mt-1 text-primary-500'>
-                    {errors.email.type === 'required' && 'EMAIL is required'}
-                    {errors.email.type === 'pattern' && 'EMAIL is not valid'}
-                  </p>
-                )
-              }
+              <div className='mb-5'>
+                <input
+                  className={inputStyle}
+                  type='text'
+                  placeholder='NAME'
+                  {...register('name', {
+                    required: true,
+                    maxLength: 100
+                  })}
+                />
+                {
+                  // display errors of the name field
+                  errors.name && (
+                    <p className='mt-1 text-primary-500'>
+                      {errors.name.type === 'required' && 'NAME is required'}
+                      {errors.name.type === 'maxLength' && 'NAME is not exceeded 100 characters'}
+                    </p>
+                  )
+                }
+              </div>
+              <div className='mb-5'>
+                <input
+                  className={inputStyle}
+                  type='email'
+                  placeholder='EMAIL'
+                  {...register('email', {
+                    required: true,
+                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+                  })}
+                />
+                {
+                  // display errors of the name field
+                  errors.email && (
+                    <p className='mt-1 text-primary-500'>
+                      {errors.email.type === 'required' && 'EMAIL is required'}
+                      {errors.email.type === 'pattern' && 'EMAIL is not valid'}
+                    </p>
+                  )
+                }
+              </div>
 
               <textarea
                 className={inputStyle}
@@ -118,7 +121,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
               {
                 // display errors of the message field
                 errors.message && (
-                  <p className='mt-1 text-primary-500'>{errors.message.type === 'required' && 'MESSAGE is required'}</p>
+                  <p className=' text-primary-500'>{errors.message.type === 'required' && 'MESSAGE is required'}</p>
                 )
               }
               <button className='mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white'>
