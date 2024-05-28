@@ -42,7 +42,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
           }}
         >
           <HText>
-            <span className='text-primary-500'>JOIN US NOW</span> TO GET SHAPE
+            <span className='text-primary-500'>JOIN NOW</span> TO GET SHAPE
           </HText>
           <p className='my-5'>
             Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl sapien vel rhoncus. Placerat at in enim
