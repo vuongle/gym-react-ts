@@ -59,7 +59,7 @@ export default function Benefits({ setSelectedPage }: Props) {
           <HText>MORE JUST THAN GYM</HText>
           <p className='my-5 text-sm'>
             We provide world class fitness equipment, trainers and classes to get you to your ultimate fitness goals
-            with ease. We also provide true care into each and every member.
+            with ease. We provide true care into each and every member.
           </p>
         </motion.div>
 
